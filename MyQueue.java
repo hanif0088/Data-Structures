@@ -31,6 +31,7 @@ class ArrayQueue
     {
         return length ;
     }
+
     /*  Function to check the front element of the queue */
     public int peek()
     {
@@ -44,8 +45,8 @@ class ArrayQueue
         	return queue[front];
         }
     }
-    /*  Function to insert an element at the rear of the queue. Time complexity O(1) */
-    public void insert(int i)
+
+    public void enqueue(int i)
     {
         if (rear == -1)
         {
@@ -64,8 +65,9 @@ class ArrayQueue
         }
         length++ ;
     }
+    
     /*  Function to remove front element from the queue. Time complexity O(1) */
-    public int remove()
+    public int dequeue()
     {
         if (isEmpty())
         {
@@ -108,12 +110,12 @@ public class MyQueue
     public static void main(String[] args)
     {
         ArrayQueue queue = new ArrayQueue(10);
-        queue.insert( 1);
-        queue.insert( 2);
-        queue.insert( 3);
-        queue.insert( 4);
-        queue.insert( 5);
-        queue.remove();
+        queue.enqueue( 1);
+        queue.enqueue( 2);
+        queue.enqueue( 3);
+        queue.enqueue( 4);
+        queue.enqueue( 5);
+        queue.dequeue();
         queue.display();
     }
 }
