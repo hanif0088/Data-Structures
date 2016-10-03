@@ -11,7 +11,7 @@ public class SelectionSort
 		}
 	}
 	
-	//Time complexity O(n^2) and space complexity O(1)
+	//Time complexity best case Ω(n^2), average case Θ(n^2), worst case O(n^2) and space complexity O(1)
 	public static int[] doSelectionSort(int[] array)
 	{
 		for(int i = 0; i < array.length - 1; i++)
