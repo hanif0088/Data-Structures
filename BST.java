@@ -25,7 +25,7 @@ public class BST
 	
 	public Node rootNode = null;
 	
-	//insert Time complexity O(nlogn)
+	//insert Time complexity average: Θ(log(n)),  worst: O(n)
 	public void insert(Node rootNode, int value)
 	{
 		if( rootNode == null)
@@ -56,7 +56,7 @@ public class BST
 		}
 	}
 
-	//search Time complexity O(nlogn)
+	//search Time complexity average: Θ(log(n)),  worst: O(n)
 	public boolean search(Node rootNode, int value)
 	{
 		if(rootNode == null)
@@ -80,6 +80,7 @@ public class BST
 		}
 	}
 	
+	//DepthFirstSearch- In Order
 	public void printTreeInOrder(Node rootNode)
 	{
 		if( rootNode != null)
@@ -90,6 +91,7 @@ public class BST
 		}
 	}
 	
+	//DepthFirstSearch- Pre Order
 	public void printTreePreOrder(Node rootNode)
 	{
 		if( rootNode != null)
@@ -100,6 +102,7 @@ public class BST
 		}
 	}
 	
+	//DepthFirstSearch- Post Order
 	public void printTreePostOrder(Node rootNode)
 	{
 		if( rootNode != null)
