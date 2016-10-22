@@ -14,7 +14,7 @@ class Queue
         maxSize = size;
         count = 0;
         queue = new int[maxSize];
-        front = -1;
+        front = 0;
         rear = -1;
     }
 
@@ -84,8 +84,8 @@ class Queue
     		return -999;
     	}
     	
-    	front = (front + 1) % maxSize;
     	int dataOut = queue[front];
+    	front = (front + 1) % maxSize;
     	count --;
     	return dataOut;
     }
