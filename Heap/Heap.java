@@ -81,7 +81,7 @@ public class Heap
 		
 		while(index < currentSize / 2)// while node has at least one child
 		{
-			int leftChild = 2 * index + 1;
+		    int leftChild = 2 * index + 1;
 		    int rightChild = 2 * index + 2;
 		    
 		    // rightChild < currentSize (rightChild exists?)
