@@ -2,6 +2,7 @@ public class Heap
 {
 	public static void main(String[] args) 
 	{
+		// Heap sort time complexity O(nlogn)
 		Heap myHeap = new Heap(10);
 		myHeap.insert(15);
 		myHeap.insert(10);
@@ -45,6 +46,7 @@ public class Heap
 		return true;
 	}
 	
+	// reheapUp() time complexity O(logn)
 	public void reheapUp(int index)
 	{
 		while(index > 0)
@@ -74,7 +76,8 @@ public class Heap
 		reheapDown();
 		return root;
 	}
-	  
+	
+	// reheapDown() time complexity O(logn)
 	public void reheapDown()
 	{
 		int index = 0; //root index
@@ -82,7 +85,7 @@ public class Heap
 		
 		while(index < currentSize / 2)// while node has at least one child
 		{
-		    int leftChild = 2 * index + 1;
+			int leftChild = 2 * index + 1;
 		    int rightChild = 2 * index + 2;
 		    
 		    // check if rightChild exists ( rightChild < currentSize ) 
