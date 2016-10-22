@@ -35,8 +35,8 @@ public class MyStack
    {
 	  if( top == -1 )
 	  {
-      System.out.println("Stack underflown!");
-		  return -999;
+              System.out.println("Stack underflown!");
+              return -999;
 	  }
 	  
           int dataOut = stackArray[top];
@@ -48,8 +48,8 @@ public class MyStack
    {
 	   if( top == -1 )
 	   {
-      System.out.println("Stack underflown!");
-		  return -999;
+               System.out.println("Stack underflown!");
+	       return -999;
  	   }
 	  
            return stackArray[top];
