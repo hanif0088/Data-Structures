@@ -11,7 +11,7 @@ public class Heap
 		
 		for(int i=0; i<myHeap.currentSize; i++)
 		{
-			System.out.println(myHeap.heapArray[i]);
+			System.out.print(myHeap.heapArray[i] + " ");
 		}
 	}
 	
@@ -35,6 +35,7 @@ public class Heap
 	{
 		if(currentSize == maxSize)
 		{
+			System.out.println("Heap is full!");
 			return false;
 		}
 		
@@ -55,12 +56,11 @@ public class Heap
 				int temp = heapArray[index];
 				heapArray[index] = heapArray[parent];
 				heapArray[parent] = temp;
-				
 				index = parent;
 			}
 			else
 			{
-				break;
+				break; // it's already balanced, no changes needed
 			}
 		}
 	}
@@ -69,7 +69,8 @@ public class Heap
 	{
 		int root = heapArray[0];
 		currentSize--;
-		heapArray[0] = heapArray[currentSize];
+		heapArray[0] = heapArray[currentSize];// Move the last element at the root
+		heapArray[currentSize] = 0; // Set the last element to 0 
 		reheapDown();
 		return root;
 	}
@@ -84,7 +85,7 @@ public class Heap
 		    int leftChild = 2 * index + 1;
 		    int rightChild = 2 * index + 2;
 		    
-		    // rightChild < currentSize (rightChild exists?)
+		    // check if rightChild exists ( rightChild < currentSize ) 
 		    if (rightChild < currentSize && heapArray[leftChild] < heapArray[rightChild]) 
 		    {
 		    	largerChild = rightChild;
@@ -106,6 +107,5 @@ public class Heap
 		    	break; // it's already balanced, no changes needed
 		    }
 		}		
-	}
-	
+	}	
 }
