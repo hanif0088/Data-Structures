@@ -1,3 +1,5 @@
+/* Implementing Stack using an Array */
+
 public class MyStack
 {
    private int maxSize;
@@ -12,33 +14,56 @@ public class MyStack
    }
 
    //Insertion time complexity O(1)
-   public void push(int j)
+   public boolean push(int dataIn)
    {
-	  top++;
-      stackArray[top] = j;
+      if(top == maxSize -1 )
+      {
+          return false;
+      }
+	  
+      top++;
+      stackArray[top] = dataIn;
+      return true;
    }
 
    // Deletion time complexity O(1)
    public int pop()
    {
-      int value = stackArray[top];
-      top--;
-      return value;
+	  if( top == -1 )
+	  {
+		  return -999;
+	  }
+	  
+          int dataOut = stackArray[top];
+          top--;
+          return dataOut;
    }
 
    public int peek()
    {
-      return stackArray[top];
+	   if( top == -1 )
+	   {
+		  return -999;
+ 	   }
+	  
+           return stackArray[top];
    }
+   
    public boolean isEmpty()
    {
       return (top == -1);
    }
+	
    public boolean isFull()
    {
       return (top == maxSize - 1);
    }
 
+   int stackCount()
+   {
+      return (top+1);
+   }
+   
    public static void main(String[] args)
    {
       MyStack myStack = new MyStack(10);
