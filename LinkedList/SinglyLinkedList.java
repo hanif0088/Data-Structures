@@ -144,6 +144,44 @@ class LinkedList
         } 
     }
     
+    public void reverse()
+    {
+    	/*
+    	 * current points to the current node
+    	 * next points to the next node of current node (both current & next moving forward)
+    	 * previous points one node before the current node (points to the head of reversed linked list)
+    	 * 
+    	 * 1 -> 2-> 3-> 4
+    	 * current points to 1
+    	 * next is null
+    	 * previous is null(head of reversed list is null)
+    	 * 
+    	 * first iteration:
+    	 * 
+    	 * next points to 2 
+    	 * 
+    	 * current.next points to previous (which is null)
+    	 * previous points to current (head of reversed list)
+    	 * null (from previous) <- 1 (previous is pointing to 1, which is head)
+    	 * 
+    	 * current points to next (moving forward)
+    	 * 2-> 3 -> 4  (both current and next pointing to 2)
+    	 */
+    	
+    	Node current = headNode;
+    	Node next = null;
+    	Node previous = null;
+    	
+    	while(current != null)
+    	{
+    		next = current.nextNode;
+    		current.nextNode = previous;
+    		previous = current;
+    		current = next;
+    	}
+    	tailNode = headNode;
+    	headNode = previous;
+    }
     // Time complexity of display and search function O(n)
     public void display()
     {
@@ -159,6 +197,7 @@ class LinkedList
     	}
     	System.out.print("\n");
     }
+    
 }
 
 public class SinglyLinkedList
@@ -174,6 +213,8 @@ public class SinglyLinkedList
         list.insertAtPosition(3,3);
         list.insertAtPosition(4,1);
         list.deleteAtPosition(7);
-        list.display(); 
+        list.display();
+        list.reverse();
+        list.display();
     }
 }
